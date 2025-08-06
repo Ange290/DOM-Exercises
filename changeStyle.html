@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding a closing button</title>
+        <style>
+          </style>
+    </head>
+    <body>
+        <h1 id="text">I love JavaScript and HTML</h1>
+        <button id="changeStyle">Change Style</button>
+        <script>
+            let h1 = document.getElementById('text');
+            let btn = document.getElementById('changeStyle');
+            btn.addEventListener('click', function(){
+                h1.style.cssText ="font-family: Arial; font-size: 2em; color: green"
+            })
+        </script>
+        </body> 
+        </html> 
