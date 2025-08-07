@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head><meta charset=utf-8 />
+<title>Change the content of a cell</title>
+</head><body>
+<table id="myTable" border="1" style="border-collapse: collapse;">
+<tr>
+<td>Row1 cell1</td>
+<td>Row1 cell2</td>
+</tr>
+<tr>
+<td>Row2 cell1</td>
+<td>Row2 cell2</td>
+</tr>
+<tr>
+<td>Row3 cell1</td>
+<td>Row3 cell2</td>
+</tr>
+</table><br>
+<form>
+<input type="button" id="btn" value="Change content">
+</form>
+</body>
+  <script>
+    // Run only after DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('btn');
+
+      btn.addEventListener('click', function () {
+        updateTableCell(1, 1, 'Updated!');
+      });
+
+      function updateTableCell(rowIndex, colIndex, newValue) {
+        const table = document.getElementById('myTable');
+
+        if (!table) {
+          console.error("Table not found!");
+          return;
+        }
+
+        if (rowIndex >= 0 && rowIndex < table.rows.length) {
+          const row = table.rows[rowIndex];
+
+          if (colIndex >= 0 && colIndex < row.cells.length) {
+            row.cells[colIndex].textContent = newValue;
+          } else {
+            console.error("Invalid column index.");
+          }
+        } else {
+          console.error("Invalid row index.");
+        }
+      }
+    });
+  </script>
+</html>
