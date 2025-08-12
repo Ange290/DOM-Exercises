@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myForm{
+            margin-left: 20vw;
+            margin-top: 5vw;
+        }
+           table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    </style>
+</head>
+<body>
+    <form action="" id="myForm">
+        <input type="text" id="tittle" name="title" placeholder="Enter tittle">&nbsp;&nbsp;&nbsp;
+        <input type="text" id="name" name="name" placeholder="Enter name"> <br><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+<script>
+let form = document.getElementById('myForm');
+let table = document.createElement('table');
+
+ let tr = document.createElement('tr');
+  let rows = document.createElement('tr');
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+
+     let title = form.elements['title'].value;
+    let name = form.elements['name'].value;
+
+   let existTh = document.querySelectorAll('th');
+   let titles = Array.from(existTh).map(th =>th.textContent);
+   let nowIndex = titles.indexOf(title);
+
+
+    let th = document.createElement('th');
+    th.textContent = title;
+    tr.appendChild(th);
+    table.appendChild(tr);       
+   
+    let td = document.createElement('td');
+    td.textContent = name;
+    rows.appendChild(td);
+     table.appendChild(rows);   
+    document.body.appendChild(table);
+  
+    form.reset();
+})
+</script>
+</html>

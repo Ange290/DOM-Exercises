@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    display: flex;
+    align-content: flex-start;
+    text-align: center;
+    padding: 10vw;
+    gap: 10px;
+}
+#left{
+    background-color: aquamarine;
+    width: 20vw;
+    height: 20vw;
+    padding: 10px;
+}
+#right{
+    background-color:cadetblue;
+    width: 20vw;
+    height: 20vw;
+    padding: 10px;
+}
+#left h4, #right h4{
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    cursor: grab;
+}
+#message{
+width: 30vw;
+height: 3vw;
+border-radius: 5px solid black;
+margin-left: 20vw;
+margin-top: 20px;
+}
+#btn{
+width: 10vw;
+height: 3vw;
+background-color: chartreuse;
+border: 1px solid black;
+border-radius: 10px;
+margin-left: 20vw; 
+}
+label{
+    width: 30vw;
+height: 3vw;
+border-radius: 5px solid black;
+margin-left: 20vw;
+font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <form action="" id="myForm" class="myform">
+        <label>Add item on list</label><br>
+        <input type="text" name="message" id="message" placeholder="Enter list item"><br><br>
+        <input type="submit" value="Add List"  id="btn">
+<div class="container">
+
+        <div id="left">
+
+        </div>
+        <div id="right">
+
+        </div>
+        </div>
+    </form>
+<script>
+    let form = document.getElementById('myForm');
+    let left = document.getElementById('left');
+    let right = document.getElementById('right');
+    let draggedItem = null;
+
+    form.addEventListener('submit', function(e){
+       e.preventDefault();
+        let message = form.elements['message'].value;
+
+        let h4 = document.createElement('h4');
+        h4.textContent = message;
+        h4.setAttribute('draggable', true);
+
+        h4.addEventListener('dragstart', function(){
+        draggedItem = h4;
+        setTimeout(()=> h4.style.display = 'none', 0)
+        });
+
+        h4.addEventListener('dragend', function(){
+            h4.style.display = 'block';
+            draggedItem= null;
+        });
+
+        left.appendChild(h4);
+        form.reset();
+    });
+
+ right.addEventListener('dragover', function(event){
+    event.preventDefault();
+ });
+ right.addEventListener('drop', function(event){
+    event.preventDefault();
+    if(draggedItem){
+        right.appendChild(draggedItem);
+    }
+ })
+</script>
+</body>
+</html>
