@@ -11,7 +11,7 @@ function timer(){
 
  let sc = parseInt(currentTime.textContent);
     subBtn.addEventListener('click', function(){
-       
+       subBtn.disabled = false;
         clearInterval(countDown);
         countDown = setInterval(()=>{
              sc--;
@@ -23,6 +23,7 @@ function timer(){
             if(sc == 0){
                     sc = 0;
                 currentTime.textContent = sc + 's';
+                subBtn.disabled = true;
             }
         },1000)
     });
@@ -69,7 +70,7 @@ function timer(){
                 alert('Time is up!!!!');
                 sc = 0;
                 currentTime.textContent = sc + 's';
-                resetButton();
+                resetButtons();
             }
         },1000)
         running = true;

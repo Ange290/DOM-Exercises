@@ -1,0 +1,66 @@
+.span-1{
+    display: block;
+    text-align: center;
+    padding-top: 10vw;
+}
+.span-2{
+    display: block;
+    text-align: justify;
+    transform:rotate(90deg) ;
+    padding-left: 30vw;
+   padding-top: 10vw;
+
+}
+.span-3{
+    display: block;    
+    transform: rotate(90deg);
+    padding-left: 30vw;
+   
+}
+.span-4{
+    display: block;
+    transform: rotate(270deg);
+    padding-left: 75vw;
+    padding-top: 12vw;
+}
+.span-5{
+    display: block;
+    transform: rotate(360deg);
+    padding-left: 36vw;
+    margin-top: -40vw;
+}
+.span-6{
+    display: block;
+    padding-left: 57vw;
+    margin-top: -5vw;
+}
+.span-7{
+     display: block;
+    padding-left: 46vw;
+    margin-top: -10vw;
+}
+.span-8{
+     display: block;
+    padding-left: 47vw;
+    margin-top: 10vw;
+}
+.span-9{
+     display: block;
+    padding-left: 51vw;
+    margin-top: -6vw;
+}
+.span-10{
+     display: block;
+    padding-left: 50vw;
+    margin-top: 1vw;
+}
+.span-11{
+     display: block;
+    padding-left: 53vw;
+    margin-top: -5vw;
+}
+.span-12{
+     display: block;
+    padding-left: 58vw;
+    margin-top: -10vw;
+}
