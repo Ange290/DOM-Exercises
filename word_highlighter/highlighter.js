@@ -26,7 +26,7 @@ for(let i=0; i<= arr.length; i++){
     let word = arr[i];
     if(obj.hasOwnProperty(word)){
         arr[i] = `<span class ="highlight">${word}</span>`;
-        // span.classList.add(`span-${i +1}`)
+        
     }
 }
 myParagraph.innerHTML = arr.join(' ')
